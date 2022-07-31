@@ -1,22 +1,38 @@
-import { Text, TextInput, View } from 'react-native';
+import { Text, TextInput, View, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 
 export function Home() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.eventName}>
-        React Native
-      </Text>
+    function handlePaticipantAdd(){
+        console.log("Você clicou aqui");
+    }
 
-      <Text style={styles.eventDate}>
-        By Weslley Ferraz
-      </Text>
+    return (
+        <View style={styles.container}>
+            <Text style={styles.eventName}>
+                Novo Evento
+            </Text>
 
-      <TextInput
-        style={styles.imput}
-        placeholder="Nome do participante"
-        placeholderTextColor="#6B6B6B"
-      />
-    </View>
+            <Text style={styles.eventDate}>
+                By Weslley Ferraz
+            </Text>
+
+            <View style={styles.form}>
+                <TextInput
+                    style={styles.imput}
+                    placeholder="Nome do participante"
+                    placeholderTextColor="#6B6B6B"
+                />
+
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={handlePaticipantAdd}
+                >
+                    <Text style={styles.buttonText}>
+                        +
+                    </Text>
+                </TouchableOpacity>
+            </View>
+            
+        </View>
   );
 }
