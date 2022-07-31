@@ -1,7 +1,7 @@
-import { Text, View } from 'react-native';
+import { Text, TextInput, View } from 'react-native';
 import { styles } from './styles';
 
-export default function Home() {
+export function Home() {
   return (
     <View style={styles.container}>
       <Text style={styles.eventName}>
@@ -11,6 +11,12 @@ export default function Home() {
       <Text style={styles.eventDate}>
         By Weslley Ferraz
       </Text>
+
+      <TextInput
+        style={styles.imput}
+        placeholder="Nome do participante"
+        placeholderTextColor="#6B6B6B"
+      />
     </View>
   );
 }
