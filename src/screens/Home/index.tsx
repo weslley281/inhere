@@ -1,35 +1,51 @@
-import { Text, TextInput, View, TouchableOpacity } from 'react-native';
+import { Text, TextInput, View, TouchableOpacity, ScrollView } from 'react-native';
 import { Participant } from '../../components/Participant';
 import { styles } from './styles';
 
 export function Home() {
-  function handlePaticipantAdd() {
-    console.log('Adciona um Participante');
-  }
+    const participants = ['a', 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l'];
 
-  function handlePaticipantRemove(name: string){
-    console.log(`Remove o participante ${name}`);
-  }
+    function handlePaticipantAdd() {
+        console.log('Adciona um Participante');
+    }
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.eventName}>Novo Evento</Text>
+    function handlePaticipantRemove(name: string){
+        console.log(`Remove o participante ${name}`);
+    }
 
-      <Text style={styles.eventDate}>By Weslley Ferraz</Text>
+    return (
+        <View style={styles.container}>
+            <Text style={styles.eventName}>Novo Evento</Text>
 
-      <View style={styles.form}>
-        <TextInput
-          style={styles.imput}
-          placeholder="Nome do participante"
-          placeholderTextColor="#6B6B6B"
-        />
+            <Text style={styles.eventDate}>
+                By Weslley Ferraz
+            </Text>
 
-        <TouchableOpacity style={styles.button} onPress={handlePaticipantAdd}>
-          <Text style={styles.buttonText}>+</Text>
-        </TouchableOpacity>
-      </View>
+            <View style={styles.form}>
+                <TextInput
+                style={styles.imput}
+                placeholder="Nome do participante"
+                placeholderTextColor="#6B6B6B"
+                />
 
-      <Participant name="Weslley ferraz" onRemove={() => handlePaticipantRemove('Weslley')}/>
-    </View>
-  );
+                <TouchableOpacity style={styles.button} onPress={handlePaticipantAdd}>
+                    <Text style={styles.buttonText}>
+                        +
+                    </Text>
+                </TouchableOpacity>
+            </View>
+
+            <ScrollView showsVerticalScrollIndicator={false}>
+                {
+                    participants.map(participant => (
+                        <Participant
+                            key={participant}
+                            name={participant}
+                            onRemove={() => handlePaticipantRemove('Weslley')}
+                        />
+                    ))
+                }
+            </ScrollView>
+        </View>
+    );
 }
