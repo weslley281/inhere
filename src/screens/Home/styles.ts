@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#131016',
     padding: 24,
+    alignItems: 'center'
   },
   eventName: {
     color: 'white',
@@ -26,7 +27,7 @@ export const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#FFF',
-    fontSize: 24
+    fontSize: 24,
   },
   button: {
     width: 56,
