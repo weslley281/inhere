@@ -3,10 +3,10 @@ import { Participant } from '../../components/Participant';
 import { styles } from './styles';
 
 export function Home() {
-    const participants = ['a', 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    const participants = ['a'];
 
     function handlePaticipantAdd() {
-        if(participants.includes("a")){
+        if(participants.includes("Weslley1")){
             return Alert.alert("Erro ao Cadastrar", "Já exite um participante com esse nome");
         }
     }
