@@ -11,17 +11,19 @@ import { Participant } from '../../components/Participant';
 import { styles } from './styles';
 
 export function Home() {
-  const [participants, setParticipants] = useState(['Weslley']);
+  const [participants, setParticipants] = useState<string[]>([]);
+  const [participantName, setParticipantName] = useState('');
 
   function handlePaticipantAdd() {
-    if (participants.includes('a')) {
+    if (participants.includes(participantName)) {
       return Alert.alert(
         'Erro ao Cadastrar',
         'Já exite um participante com esse nome'
       );
     }
 
-    setParticipants(prevState => [...prevState , 'Gotosao']);
+    setParticipants((prevState) => [...prevState, participantName]);
+    setParticipantName('');
   }
 
   function handlePaticipantRemove(name: string) {
@@ -51,6 +53,8 @@ export function Home() {
           style={styles.imput}
           placeholder="Nome do participante"
           placeholderTextColor="#6B6B6B"
+          onChangeText={setParticipantName}
+          value={participantName}
         />
 
         <TouchableOpacity style={styles.button} onPress={handlePaticipantAdd}>
