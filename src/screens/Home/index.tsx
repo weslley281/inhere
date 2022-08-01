@@ -1,9 +1,9 @@
-import { Text, TextInput, View, TouchableOpacity, ScrollView } from 'react-native';
+import { Text, TextInput, View, TouchableOpacity, FlatList } from 'react-native';
 import { Participant } from '../../components/Participant';
 import { styles } from './styles';
 
 export function Home() {
-    const participants = ['a', 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l'];
+    const participants = ['a', 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
     function handlePaticipantAdd() {
         console.log('Adciona um Participante');
@@ -35,17 +35,24 @@ export function Home() {
                 </TouchableOpacity>
             </View>
 
-            <ScrollView showsVerticalScrollIndicator={false}>
-                {
-                    participants.map(participant => (
-                        <Participant
-                            key={participant}
-                            name={participant}
-                            onRemove={() => handlePaticipantRemove('Weslley')}
-                        />
-                    ))
-                }
-            </ScrollView>
+            <FlatList
+                style={styles.campoRolagem}
+                keyExtractor={item => item}
+                data={participants}
+                renderItem={({ item }) => (
+                    <Participant
+                        key={item}
+                        name={item}
+                        onRemove={() => handlePaticipantRemove('Weslley')}
+                    />
+                )}
+                showsVerticalScrollIndicator={false}
+                ListEmptyComponent={() => (
+                    <Text style={styles.listEmpytText}>
+                        Ninguém quer ir nesse evento, seu trouxa
+                    </Text>
+                )}
+            />
         </View>
     );
 }

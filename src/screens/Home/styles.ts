@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { DrawerLayoutAndroidBase, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
@@ -23,7 +23,8 @@ export const styles = StyleSheet.create({
     backgroundColor: '#1F1E25',
     borderRadius: 5,
     color: 'white',
-    marginRight: 12
+    marginRight: 12,
+    fontSize: 16
   },
   buttonText: {
     color: '#FFF',
@@ -42,5 +43,13 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: 36,
     marginBottom: 42
+  },
+  campoRolagem: {
+    width: '100%',
+  },
+  listEmpytText: {
+    color: '#FFF',
+    fontSize: 14,
+    textAlign: 'center'
   }
 });
