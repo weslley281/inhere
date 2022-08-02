@@ -21,9 +21,8 @@ export function Home() {
         'Preencha um nome de Usuário Válido'
       )
     }
-    
+
     if (participants.includes(participantName)) {
-      console.log("Participante existe");
       return Alert.alert(
         'Erro ao Cadastrar',
         'Já exite um participante com esse nome'
@@ -34,9 +33,7 @@ export function Home() {
     setParticipantName('');
   }
 
-  function handlePaticipantRemove(name: string) {
-    return console.log("Nome do usuário: ", name);
-    
+  function handlePaticipantRemove(name: string) {    
     Alert.alert(
       'Alerta',
       `Você tem certeza que quer remover o participante ${name} ?`,
