@@ -54,7 +54,7 @@ export function Home() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.eventName}>Novo Evento</Text>
+      <Text style={styles.eventName}>Cadastro de Eventos</Text>
 
       <Text style={styles.eventDate}>By Weslley Ferraz</Text>
 
