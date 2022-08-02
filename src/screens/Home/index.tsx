@@ -15,7 +15,15 @@ export function Home() {
   const [participantName, setParticipantName] = useState('');
 
   function handlePaticipantAdd() {
+    if (participantName === ''){
+      return Alert.alert(
+        'Erro ao cadastrar',
+        'Preencha um nome de Usuário Válido'
+      )
+    }
+    
     if (participants.includes(participantName)) {
+      console.log("Participante existe");
       return Alert.alert(
         'Erro ao Cadastrar',
         'Já exite um participante com esse nome'
@@ -27,6 +35,8 @@ export function Home() {
   }
 
   function handlePaticipantRemove(name: string) {
+    return console.log("Nome do usuário: ", name);
+    
     Alert.alert(
       'Alerta',
       `Você tem certeza que quer remover o participante ${name} ?`,
